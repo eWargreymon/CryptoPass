@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "login-crypto-cfedd": {
+      "hosting": {
+        "cryptoPass": [
+          "login-crypto-cfedd"
+        ]
+      }
+    }
+  }
+}

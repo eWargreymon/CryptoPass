@@ -1,0 +1,117 @@
+<div class="main-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-10">
+        <div class="main-banner-content">
+          <h1 class="main-banner-content-header consolas upper mb-4">
+            CryptoPass - Generador de códigos hash
+          </h1>
+          <div class="main-banner-content-text">
+            <h4 class="consolas bigger">
+              Usa CryptoPass para traducir con las principales funciones de
+              resumen cualquier texto
+            </h4>
+            <h4 class="consolas bigger">
+              Por el momento tenemos disponible las funciones:
+              <div class="d-flex justify-content-evenly mt-1">
+                <span class="banner-hash">MD5</span>
+                <span class="banner-hash">SHA256</span>
+                <span class="banner-hash">SHA512</span>
+              </div>
+            </h4>
+            <h4 class="consolas bigger">
+              También tenemos disponible un gestor de contraseñas, para que
+              almacenes codificadas tus contraseñas más importantes. Obtén más
+              información en el siguiente enlace:
+            </h4>
+            <div class="d-flex justify-content-evenly">
+              <button
+                mat-raised-button
+                color="primary"
+                [routerLink]="['/about']"
+              >
+                Más información
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col">
+      <h1 class="consolas upper">Funciones Hash</h1>
+      <h2 class="consolas">
+        Selecciona una de las siguientes funciones hash para hacer la conversión
+      </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-8">
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title class="consolas bigger"> MD5 </mat-panel-title>
+            <mat-panel-description>
+              Conversión en formato MD5 128 bits
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <app-md5></app-md5>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title class="consolas bigger"> SHA-256 </mat-panel-title>
+            <mat-panel-description>
+              Conversión en formato SHA de 256 bits
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <app-sha256></app-sha256>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title class="consolas bigger"> SHA-512 </mat-panel-title>
+            <mat-panel-description>
+              Conversión en formato SHA de 512 bits
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <app-sha512></app-sha512>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+
+  <div class="row">
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+  </div>
+
+  <!-- <mat-form-field appearance="outline">
+        <mat-label>Outline form field</mat-label>
+        <input matInput placeholder="Placeholder">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+    </mat-form-field> -->
+
+  <!-- <div #container>
+        <button ngxClipboard [cbContent]="'CTC Inline Text.'" [container]="container">Copy Content</button>
+    </div>
+    <hr>
+    <input type="text" #formInputText />
+    <button [ngxClipboard]="formInputText">Copy Data</button>
+    <hr>
+    <button (click)="copyText()">Copy Text</button> -->
+</div>

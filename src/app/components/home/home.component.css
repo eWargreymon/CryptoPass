@@ -1,0 +1,32 @@
+.main-banner{
+    padding-top: 5em;
+    padding-bottom: 5em;
+    background-image: url(src\assets\img\enc4.jpg);
+    background-size: cover;
+}
+
+.main-banner-content-header{
+    font-size: xx-large;
+}
+
+.upper{
+    text-transform: uppercase;
+}
+
+.consolas{
+    font-family: 'consolas', 'Courier New', Courier, monospace;
+}
+
+.bigger{
+    font-size: large;
+}
+
+.banner-hash{
+    border: 1px solid;
+    padding: 0 5px;
+}
+
+.banner-hash:hover{
+    background-color: chartreuse;
+    color: black;
+}
