@@ -1,1 +1,105 @@
-<p>about works!</p>
+<div class="banner text-center">
+  <h1>CryptoPass</h1>
+  <mat-icon>lock</mat-icon>
+  <p>Codificar textos es nuestra pasión</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="title">
+      <h2 class="info-title consolas">Sobre nosotros</h2>
+    </div>
+    <div class="col-lg-6 info">
+      <h4 class="info-text">
+        Con <span class="consolas">CryptoPass</span> podrás hacer uso de nuestro
+        estupendo conversor de códigos hash, que hace uso de los 3 tipos más
+        comunes de algoritmos hash: MD5, SHA-256 y SHA-512
+      </h4>
+      <h4 class="info-text">
+        ¿Quieres convertir cualquier texto a uno de estos formatos?
+        <span class="consolas">CryptoPass</span> es para ti.
+      </h4>
+      <h4 class="info-text">
+        ¿Quieres gestionar tus contraseñas? Atent@ a lo que
+        <span class="consolas">CryptoPass</span> puede ofrecerte
+      </h4>
+    </div>
+    <div class="col-lg-6">
+      <img
+        class="img"
+        src="../../../assets/img/enc5.jpg"
+        alt="Imagen de cifrado"
+      />
+    </div>
+  </div>
+</div>
+
+<hr style="margin: 0 2em" />
+
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="title">
+      <h2 class="info-title consolas">Servicios</h2>
+    </div>
+    <div class="col-lg-5 service">
+      <div class="service-content">
+        <h4 class="consolas serv-title">Gestor de contraseñas</h4>
+        <img class="img mb-2" src="../../../assets/img/contraseñas.jpeg" alt="">
+        <p class="service-text">
+          ¿Alguna vez has soñado con no tener que recordar todas las contraseñas que usas diariamente?
+          Si es así, usar esta herramienta te vendrá genial.
+        </p>
+        <p>
+          Solo tendrás que registrarte y empezar a almacenar tus contraseñas,
+          codificadas haciendo uso de algoritmos de cifrado para aportar mayor seguridad.
+        </p>
+        <button mat-raised-button color="primary" [routerLink]="['/login']">Accede a tu cuenta</button>
+      </div>
+    </div>
+    <div class="col-lg-5 service">
+      <div class="service-content">
+        <h4 class="consolas serv-title">Conversor MD5</h4>
+        <img class="img-s mb-2" src="../../../assets/img/md5.jpg" alt="">
+        <p>
+          El algoritmo MD5 se trata de un algoritmo de reducción
+          criptográfico de 128 bits ampliamente usado.
+        </p>
+        <p>
+          Con nuestro sencillo conversor, podrás codificar cualquier texto
+          que introduzcas haciendo uso de este algoritmo.
+        </p>
+        <button mat-raised-button color="primary" [routerLink]="['/home']">Prúebame</button>
+      </div>
+    </div>
+    <div class="col-lg-5 service">
+      <div class="service-content">
+        <h4 class="consolas serv-title">Conversor SHA-256</h4>
+        <img class="img-s mb-2" src="../../../assets/img/sha256.jpg" alt="">
+        <p>
+          El algoritmo SHA-256 forma parte del conjunto de funciones hash SHA-2, diseñadas por la Agencia de Seguridad Nacional de los EEUU (NSA).
+          Concretamente, este algoritmo produce un resultado de 256 bits. 
+        </p>
+        <p>
+          Con nuestro sencillo conversor, podrás codificar cualquier texto
+          que introduzcas haciendo uso de este algoritmo.
+        </p>
+        <button mat-raised-button color="primary" class="fixr" [routerLink]="['/home']">Prúebame</button>
+      </div>
+    </div>
+    <div class="col-lg-5 service">
+      <div class="service-content">
+        <h4 class="consolas serv-title">Conversor SHA-512</h4>
+        <img class="img-s mb-2" src="../../../assets/img/sha512.jpg" alt="">
+        <p>
+          El algoritmo SHA-512 forma parte del conjunto de funciones hash SHA-2, diseñadas por la Agencia de Seguridad Nacional de los EEUU (NSA).
+          Concretamente, este algoritmo produce un resultado de 512 bits, lo que lo convierte en el más robusto de esta familia de algoritmos. 
+        </p>
+        <p>
+          Con nuestro sencillo conversor, podrás codificar cualquier texto
+          que introduzcas haciendo uso de este algoritmo.
+        </p>
+        <button mat-raised-button color="primary" [routerLink]="['/home']">Prúebame</button>
+      </div>
+    </div>
+  </div>
+</div>
