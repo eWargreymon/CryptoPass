@@ -5,10 +5,6 @@
     background-size: cover;
 }
 
-.main-banner-content-header{
-    font-size: xx-large;
-}
-
 .upper{
     text-transform: uppercase;
 }
@@ -21,6 +17,14 @@
     font-size: large;
 }
 
+.xbigger{
+    font-size: xx-large;
+}
+
+.biglabel{
+    font-size: larger;
+}
+
 .banner-hash{
     border: 1px solid;
     padding: 0 5px;
@@ -30,3 +34,15 @@
     background-color: chartreuse;
     color: black;
 }
+
+.matpan{
+    padding: 1rem;
+}
+
+.textmat{
+    color: #e44e80;
+}
+
+.example-full-width {
+    width: 90%;
+  }

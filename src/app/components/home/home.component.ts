@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ClipboardService } from 'ngx-clipboard';
+import { ComunicationService } from 'src/app/services/comunication.service';
 
 @Component({
   selector: 'app-home',
@@ -9,24 +9,18 @@ import { ClipboardService } from 'ngx-clipboard';
 export class HomeComponent implements OnInit {
 
   texto: string;
-  hash: string;
-  panelOpenState = false;
+  enviado: boolean;
 
   constructor(
-    private clipboardApi: ClipboardService
+    private servicio: ComunicationService
   ) { }
 
   ngOnInit(): void {
   }
 
-  copyText(type:number) {
-    console.log(this.texto);
-    
-    if(type===0){
-      this.clipboardApi.copyFromContent(this.texto);
-    } else {
-      console.log('este sería sha');
-    }
+  enviar(){
+    this.servicio.data.next(this.texto);
+    this.enviado = true;
   }
 
 }

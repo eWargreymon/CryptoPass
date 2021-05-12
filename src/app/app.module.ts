@@ -26,7 +26,10 @@ import { MatInputModule } from "@angular/material/input";
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
-import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 import { Md5Component } from './components/hashes/md5/md5.component';
 import { Sha256Component } from './components/hashes/sha256/sha256.component';
@@ -59,7 +62,9 @@ import { AboutComponent } from './components/about/about.component';
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
-    MatExpansionModule
+    MatTabsModule,
+    MatCardModule,
+    MatTooltipModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

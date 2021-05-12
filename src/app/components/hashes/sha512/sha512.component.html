@@ -1,5 +1,18 @@
-<mat-form-field appearance="fill" color="accent">
-    <mat-label>Introduce aquí el texto</mat-label>
-    <input matInput>
-</mat-form-field>
-<button mat-raised-button color="primary">Copy text</button>
+<div *ngIf="!generado">
+    <button mat-raised-button color="primary" (click)="generate()">
+        Generar hash
+    </button>
+</div>
+
+<div *ngIf="generado">
+    <p>
+        <span *ngIf="!mostrar">¡Hash generado!</span>
+        <span *ngIf="mostrar">{{hashed}}</span>
+        <button mat-icon-button (click)="copyText()" matTooltip="Copiar código generado" matTooltipPosition="after">
+            <mat-icon>content_copy</mat-icon>
+        </button>
+    </p>
+    <button mat-raised-button *ngIf="!mostrar" color="primary" (click)="mostrar=true">Mostrar código</button>
+    <button mat-raised-button *ngIf="mostrar" color="primary" (click)="mostrar=false">Ocultar código</button>
+    <button mat-raised-button color="primary" (click)="reset()">Reset</button>
+</div>

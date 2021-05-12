@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm-12 col-10">
         <div class="main-banner-content">
-          <h1 class="main-banner-content-header consolas upper mb-4">
+          <h1 class="main-banner-content-header consolas upper xbigger mb-4">
             CryptoPass - Generador de códigos hash
           </h1>
           <div class="main-banner-content-text">
@@ -40,78 +40,86 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row mt-4">
+<div class="container mb-5">
+  <div class="row mt-4 d-flex justify-content-center">
     <div class="col">
+      <h1 class="consolas upper">Introduce tu texto</h1>
+      <h2 class="consolas">Primero, introduce aquí el texto que quieras convertir</h2>
+      <div class="mb-2">
+        <mat-form-field class="example-full-width" color="accent">
+          <input
+            matInput
+            class="biglabel textmat"
+            placeholder="Por ejemplo: un verso de tu canción favorita, un secreto que quieras enviar a alguien..."
+            [(ngModel)]="texto"
+          />
+          <button
+            mat-button
+            *ngIf="texto"
+            matSuffix
+            mat-icon-button
+            (click)="texto = '';enviado=false"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <button
+          *ngIf="texto"
+          mat-raised-button
+          color="primary"
+          (click)="enviar()"
+        >
+          Enviar
+        </button>
+        <p *ngIf="enviado && texto">¡Texto recibido!</p>
+      </div>
       <h1 class="consolas upper">Funciones Hash</h1>
       <h2 class="consolas">
-        Selecciona una de las siguientes funciones hash para hacer la conversión
+        A continuación, selecciona una de las siguientes funciones hash para
+        hacer la conversión
       </h2>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-8">
-      <mat-accordion>
-        <mat-expansion-panel
-          (opened)="panelOpenState = true"
-          (closed)="panelOpenState = false"
-        >
-          <mat-expansion-panel-header>
-            <mat-panel-title class="consolas bigger"> MD5 </mat-panel-title>
-            <mat-panel-description>
-              Conversión en formato MD5 128 bits
-            </mat-panel-description>
-          </mat-expansion-panel-header>
+  <mat-tab-group mat-stretch-tabs animationDuration="1500ms" class="mt-3">
+    <mat-tab label="MD5">
+      <mat-card class="mat-card">
+        <mat-card-header class="d-flex justify-content-start">
+          <mat-card-title>Conversión al formato MD5</mat-card-title>
+          <mat-card-subtitle class="consolas"
+            >Función de resumen muy usada de 128 bits</mat-card-subtitle
+          >
+        </mat-card-header>
+        <mat-card-content>
           <app-md5></app-md5>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel
-          (opened)="panelOpenState = true"
-          (closed)="panelOpenState = false"
-        >
-          <mat-expansion-panel-header>
-            <mat-panel-title class="consolas bigger"> SHA-256 </mat-panel-title>
-            <mat-panel-description>
-              Conversión en formato SHA de 256 bits
-            </mat-panel-description>
-          </mat-expansion-panel-header>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+    <mat-tab label="SHA-256">
+      <mat-card class="mat-card">
+        <mat-card-header class="d-flex justify-content-center">
+          <mat-card-title>Conversión al formato SHA-256</mat-card-title>
+          <mat-card-subtitle class="consolas"
+            >Función de resumen segura de 256 bits</mat-card-subtitle
+          >
+        </mat-card-header>
+        <mat-card-content>
           <app-sha256></app-sha256>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel
-          (opened)="panelOpenState = true"
-          (closed)="panelOpenState = false"
-        >
-          <mat-expansion-panel-header>
-            <mat-panel-title class="consolas bigger"> SHA-512 </mat-panel-title>
-            <mat-panel-description>
-              Conversión en formato SHA de 512 bits
-            </mat-panel-description>
-          </mat-expansion-panel-header>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+    <mat-tab label="SHA-512">
+      <mat-card class="mat-card">
+        <mat-card-header class="d-flex justify-content-end">
+          <mat-card-title>Conversión al formato SHA-512</mat-card-title>
+          <mat-card-subtitle class="consolas"
+            >Función de resumen muy segura de 512 bits</mat-card-subtitle
+          >
+        </mat-card-header>
+        <mat-card-content>
           <app-sha512></app-sha512>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </div>
-  </div>
-
-  <div class="row">
-    <textarea name="" id="" cols="30" rows="10"></textarea>
-  </div>
-
-  <!-- <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
-    </mat-form-field> -->
-
-  <!-- <div #container>
-        <button ngxClipboard [cbContent]="'CTC Inline Text.'" [container]="container">Copy Content</button>
-    </div>
-    <hr>
-    <input type="text" #formInputText />
-    <button [ngxClipboard]="formInputText">Copy Data</button>
-    <hr>
-    <button (click)="copyText()">Copy Text</button> -->
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+  </mat-tab-group>
 </div>
