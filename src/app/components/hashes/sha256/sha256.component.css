@@ -1,0 +1,13 @@
+.generado{
+    display: flex;
+    flex-direction: column;
+}
+
+.texto, .botones{
+    display: flex;
+    justify-content: center;
+}
+
+.resbut{
+    margin-left: 1em;
+}

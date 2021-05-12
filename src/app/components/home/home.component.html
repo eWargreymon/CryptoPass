@@ -3,8 +3,8 @@
     <div class="row">
       <div class="col-sm-12 col-10">
         <div class="main-banner-content">
-          <h1 class="main-banner-content-header consolas upper xbigger mb-4">
-            CryptoPass - Generador de códigos hash
+          <h1 class="main-banner-content-header consolas xbigger mb-4">
+            CryptoPass - <span class="upper">Generador de códigos hash</span>
           </h1>
           <div class="main-banner-content-text">
             <h4 class="consolas bigger">
@@ -90,7 +90,7 @@
             >Función de resumen muy usada de 128 bits</mat-card-subtitle
           >
         </mat-card-header>
-        <mat-card-content>
+        <mat-card-content class="d-flex justify-content-start">
           <app-md5></app-md5>
         </mat-card-content>
       </mat-card>
@@ -103,7 +103,7 @@
             >Función de resumen segura de 256 bits</mat-card-subtitle
           >
         </mat-card-header>
-        <mat-card-content>
+        <mat-card-content  class="d-flex justify-content-center">
           <app-sha256></app-sha256>
         </mat-card-content>
       </mat-card>
@@ -116,10 +116,18 @@
             >Función de resumen muy segura de 512 bits</mat-card-subtitle
           >
         </mat-card-header>
-        <mat-card-content>
+        <mat-card-content class="d-flex justify-content-end">
           <app-sha512></app-sha512>
         </mat-card-content>
       </mat-card>
     </mat-tab>
   </mat-tab-group>
 </div>
+
+<footer>
+  <div class="cus-footer py-3">
+    <div class="container text-center">
+      <p class="mb-0 py-2 consolas">© CryptoPass - Hashing your texts since 2021 </p>
+    </div>
+  </div>
+</footer>

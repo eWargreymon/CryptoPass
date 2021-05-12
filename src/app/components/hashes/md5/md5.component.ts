@@ -23,12 +23,17 @@ export class Md5Component implements OnInit {
   ngOnInit(): void {
     this.comunication.data.subscribe(mensaje => {
       this.mensaje = mensaje;
+      this.hashed = this.comunication.toMD5(this.mensaje);
     });
   }
 
   generate(){
-    this.hashed = this.comunication.toMD5(this.mensaje);
-    this.generado = true;
+    if(this.mensaje){
+      this.hashed = this.comunication.toMD5(this.mensaje);
+      this.generado = true;
+    } else {
+      alert('No se ha introducido texto');
+    }
   }
 
   copyText() {
@@ -38,6 +43,7 @@ export class Md5Component implements OnInit {
   reset(){
     this.generado = false;
     this.mostrar = false;
+    this.mensaje = '';
   }
 
 }

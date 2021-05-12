@@ -1,16 +1,16 @@
-<mat-toolbar>
+<mat-toolbar class="bgcolor">
 
-  <button mat-icon-button class="example-icon" [routerLink]="['/home']">
-    <mat-icon>menu</mat-icon>
+  <button mat-button [routerLink]="['/home']">
+    <mat-icon>lock</mat-icon>
+    <span class="iconText">CryptoPass</span>
   </button>
 
-  <span>CryptoPass</span>
   <span class="example-spacer"></span>
 
   <button mat-raised-button [routerLink]="['/login']">Login</button>
-  <button mat-raised-button [routerLink]="['/register']">Register</button>
-  <button mat-raised-button>Logout</button>
-  <button mat-raised-button [routerLink]="['/about']">About</button>
+  <!-- <button mat-raised-button [routerLink]="['/register']">Register</button> -->
+  <!-- <button mat-raised-button>Logout</button> -->
+  <!-- <button mat-raised-button [routerLink]="['/about']">About</button> -->
 
 </mat-toolbar>
 

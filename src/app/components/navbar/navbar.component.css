@@ -1,3 +1,12 @@
 .example-spacer {
     flex: 1 1 auto;
-  }
+}
+
+.iconText{
+  font-size: x-large;
+  font-family: 'consolas';
+}
+
+.bgcolor{
+  background-color: black;
+}

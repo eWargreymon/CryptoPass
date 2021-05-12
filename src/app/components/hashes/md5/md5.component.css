@@ -1,0 +1,21 @@
+.content{
+    margin-left: 1em;
+}
+
+.generado{
+    display: flex;
+    flex-direction: column;
+}
+
+.texto, .botones{
+    display: flex;
+    justify-content: center;
+}
+
+.resbut{
+    margin-left: 1em;
+}
+
+.fixr{
+    justify-content: flex-start;
+}
