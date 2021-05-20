@@ -1,0 +1,112 @@
+<div class="aes">
+  <div class="radio">
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      color="primary"
+      [(ngModel)]="mode"
+    >
+      <mat-radio-button class="example-radio-button" [value]="true">
+        Cifrado
+      </mat-radio-button>
+      <mat-radio-button class="example-radio-button" [value]="false">
+        Descifrado
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="operations">
+    <div class="encrypt" *ngIf="mode">
+      <div *ngIf="!generado" class="d-flex justify-content-center">
+        <button mat-raised-button color="primary" (click)="cipher()">
+          Generar texto cifrado
+        </button>
+      </div>
+
+      <div *ngIf="generado" class="generado">
+        <div class="texto">
+          <p>
+            <span *ngIf="!mostrar">¡Cifrado generado!</span>
+            <span *ngIf="mostrar">{{ cifrado }}</span>
+            <button
+              mat-icon-button
+              (click)="copyText()"
+              matTooltip="Copiar código generado"
+              matTooltipPosition="after"
+            >
+              <mat-icon>content_copy</mat-icon>
+            </button>
+          </p>
+        </div>
+        <div class="botones fixr">
+          <button
+            mat-raised-button
+            *ngIf="!mostrar"
+            color="primary"
+            (click)="mostrar = true"
+          >
+            Mostrar código
+          </button>
+          <button
+            mat-raised-button
+            *ngIf="mostrar"
+            color="primary"
+            (click)="mostrar = false"
+          >
+            Ocultar código
+          </button>
+          <button
+            mat-raised-button
+            class="resbut"
+            color="primary"
+            (click)="reset()"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="decrypt" *ngIf="!mode">
+      <mat-form-field color="accent">
+        <mat-label>Texto a descifrar</mat-label>
+        <input
+          matInput
+          placeholder="En formato AES..."
+          [(ngModel)]="cipherText"
+        />
+        <button
+          mat-button
+          *ngIf="textToCipher"
+          matSuffix
+          mat-icon-button
+          (click)="textToCipher = ''; enviadoCipher = false"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field color="accent">
+        <mat-label>Clave de descifrado</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="Espero que la recuerdes..."
+          [(ngModel)]="cipherPass"
+        />
+        <button
+          mat-button
+          *ngIf="textToCipher"
+          matSuffix
+          mat-icon-button
+          (click)="textToCipher = ''; enviadoCipher = false"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="decrypt()">
+        Descifrar texto
+      </button>
+      <textarea class="mt-3">{{ descifrado }}</textarea>
+    </div>
+  </div>
+</div>

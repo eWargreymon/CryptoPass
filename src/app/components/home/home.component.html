@@ -50,7 +50,7 @@
           <input
             matInput
             class="biglabel textmat"
-            placeholder="Por ejemplo: un verso de tu canción favorita, un secreto que quieras enviar a alguien..."
+            placeholder="Por ejemplo: un verso de tu canción favorita, una contraseña que quieras verificar..."
             [(ngModel)]="texto"
           />
           <button
@@ -63,16 +63,18 @@
             <mat-icon>close</mat-icon>
           </button>
         </mat-form-field>
-        <button
-          *ngIf="texto"
-          mat-raised-button
-          color="primary"
-          (click)="enviar()"
-        >
-          Enviar
-        </button>
-        <p *ngIf="enviado && texto">¡Texto recibido!</p>
       </div>
+      <div class="buttonLogic mb-4">
+        <button
+        *ngIf="texto"
+        mat-raised-button
+        color="primary"
+        (click)="enviar()"
+        >
+        Enviar
+      </button>
+      <p *ngIf="enviado && texto">¡Texto recibido!</p>
+    </div>
       <h1 class="consolas upper">Funciones Hash</h1>
       <h2 class="consolas">
         A continuación, selecciona una de las siguientes funciones hash para
@@ -122,12 +124,117 @@
       </mat-card>
     </mat-tab>
   </mat-tab-group>
+
+  <hr>
+
+  <div class="row mt-4 d-flex justify-content-center">
+    <div class="col">
+      <h1 class="consolas upper">Algoritmos de Cifrado</h1>
+      <h2 class="consolas">Primero, introduce aquí el texto que quieras cifrar y la clave para cifrarlo</h2>
+      <div class="mb-2">
+        <mat-form-field class="example-full-width" color="accent">
+          <mat-label>Texto a cifrar</mat-label>
+          <input
+            matInput
+            class="biglabel textmat"
+            placeholder="Por ejemplo: un secreto que quieras enviar a alguien..."
+            [(ngModel)]="textToCipher"
+          >
+          <button
+            mat-button
+            *ngIf="textToCipher"
+            matSuffix
+            mat-icon-button
+            (click)="textToCipher = '';enviadoCipher=false"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" color="accent">
+          <mat-label>Clave de cifrado</mat-label>
+          <input
+            matInput
+            type="password"
+            class="biglabel textmat"
+            placeholder="¡No la olvides! La necesitas para descifrarlo"
+            [(ngModel)]="clave"
+          >
+          <button
+            mat-button
+            *ngIf="clave"
+            matSuffix
+            mat-icon-button
+            (click)="clave = '';enviadoCipher=false"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="buttonLogic mb-4">
+        <button
+          *ngIf="textToCipher && clave"
+          mat-raised-button
+          color="primary"
+          (click)="enviarCipher()"
+        >
+          Enviar
+        </button>
+        <p *ngIf="enviadoCipher && textToCipher && clave">¡Texto recibido!</p>
+      </div>
+      <h2 class="consolas">
+        A continuación, selecciona uno de las siguientes algoritmos para
+        hacer el cifrado
+      </h2>
+    </div>
+  </div>
+
+  <mat-tab-group mat-stretch-tabs animationDuration="1500ms" class="mt-3">
+    <mat-tab label="AES">
+      <mat-card class="mat-card">
+        <mat-card-header class="d-flex justify-content-start">
+          <mat-card-title>Cifrado con AES</mat-card-title>
+          <mat-card-subtitle class="consolas"
+            >Algoritmo de cifado AES</mat-card-subtitle
+          >
+        </mat-card-header>
+        <mat-card-content class="d-flex justify-content-start">
+          <app-aes></app-aes>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+    <mat-tab label="DES">
+      <mat-card class="mat-card">
+        <mat-card-header class="d-flex justify-content-center">
+          <mat-card-title>Cifrado con DES</mat-card-title>
+          <mat-card-subtitle class="consolas"
+            >Algoritmo de cifrado DES</mat-card-subtitle
+          >
+        </mat-card-header>
+        <mat-card-content class="d-flex justify-content-center">
+          <app-des></app-des>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+    <mat-tab label="TDES">
+      <mat-card class="mat-card">
+        <mat-card-header class="d-flex justify-content-end">
+          <mat-card-title>Cifrado con TDES</mat-card-title>
+          <mat-card-subtitle class="consolas">
+            Algoritmo de cifrado Triple DES
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="d-flex justify-content-end">
+          <app-tdes></app-tdes>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+  </mat-tab-group>
 </div>
 
 <footer>
   <div class="cus-footer py-3">
     <div class="container text-center">
-      <p class="mb-0 py-2 consolas">© CryptoPass - Hashing your texts since 2021 </p>
+      <p class="mb-0 py-2 consolas">© CryptoPass - Hashing and Ciphering your texts since 2021 </p>
     </div>
   </div>
 </footer>

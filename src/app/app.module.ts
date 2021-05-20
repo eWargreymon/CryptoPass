@@ -29,12 +29,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import {MatRadioModule} from '@angular/material/radio';
 
 import { Md5Component } from './components/hashes/md5/md5.component';
 import { Sha256Component } from './components/hashes/sha256/sha256.component';
 import { Sha512Component } from './components/hashes/sha512/sha512.component';
 import { AboutComponent } from './components/about/about.component';
+import { AesComponent } from './components/ciphers/aes/aes.component';
+import { DesComponent } from './components/ciphers/des/des.component';
+import { TdesComponent } from './components/ciphers/tdes/tdes.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { AboutComponent } from './components/about/about.component';
     Md5Component,
     Sha256Component,
     Sha512Component,
-    AboutComponent
+    AboutComponent,
+    AesComponent,
+    DesComponent,
+    TdesComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +70,8 @@ import { AboutComponent } from './components/about/about.component';
     MatButtonModule,
     MatTabsModule,
     MatCardModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatRadioModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
