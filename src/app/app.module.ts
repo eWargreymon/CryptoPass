@@ -30,6 +30,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatMenuModule} from '@angular/material/menu';
+import {FlexLayoutModule} from '@angular/flex-layout';
+
 
 import { Md5Component } from './components/hashes/md5/md5.component';
 import { Sha256Component } from './components/hashes/sha256/sha256.component';
@@ -38,6 +41,9 @@ import { AboutComponent } from './components/about/about.component';
 import { AesComponent } from './components/ciphers/aes/aes.component';
 import { DesComponent } from './components/ciphers/des/des.component';
 import { TdesComponent } from './components/ciphers/tdes/tdes.component';
+import { AccountComponent } from './components/account/account.component';
+import { HashesComponent } from './components/hashes/hashes.component';
+import { CifradosComponent } from './components/cifrados/cifrados.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +58,10 @@ import { TdesComponent } from './components/ciphers/tdes/tdes.component';
     AboutComponent,
     AesComponent,
     DesComponent,
-    TdesComponent
+    TdesComponent,
+    AccountComponent,
+    HashesComponent,
+    CifradosComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +76,8 @@ import { TdesComponent } from './components/ciphers/tdes/tdes.component';
     MatInputModule,
     MatIconModule,
     MatToolbarModule,
+    MatMenuModule,
+    FlexLayoutModule,
     MatButtonModule,
     MatTabsModule,
     MatCardModule,

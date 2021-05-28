@@ -9,7 +9,7 @@
     <div class="texto">
       <p>
         <span *ngIf="!mostrar">¡Hash generado!</span>
-        <span *ngIf="mostrar">{{ hashed }}</span>
+        <textarea cols="40" rows="3" *ngIf="mostrar">{{ hashed }}</textarea>
         <button
           mat-icon-button
           (click)="copyText()"
@@ -44,6 +44,14 @@
         (click)="reset()"
       >
         Reset
+      </button>
+      <button
+        mat-raised-button
+        class="resbut"
+        color="primary"
+        (click)="generate()"
+      >
+        Actualizar
       </button>
     </div>
   </div>

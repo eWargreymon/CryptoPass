@@ -23,7 +23,7 @@ export class Sha512Component implements OnInit {
   ngOnInit(): void {
     this.comunication.data.subscribe(mensaje => {
       this.mensaje = mensaje;
-      this.hashed = this.comunication.toSHA512(this.mensaje);
+      // this.hashed = this.comunication.toSHA512(this.mensaje);
     });
   }
 

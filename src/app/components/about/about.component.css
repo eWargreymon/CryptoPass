@@ -8,9 +8,8 @@
   }
 }
 
-
 .banner {
-  background-color: #33ff33;
+  background-color: #00ffff;
   color: black;
   padding: 3em 2em;
   font-size: large;
@@ -32,19 +31,18 @@
   justify-content: center;
 }
 
-.title{
-  margin-bottom: 1.8em;
-}
-
 .info-title{
-  display: inline;
+  width: fit-content;
   padding: 0.5em;
-  border: 0.5px solid gray;
+  border: 0.5px solid black;
+  border-radius: 5px;
   font-size: 2em;
+  background-color: #00ffff;
+  color: black;
 }
 
 .info-title:hover{
-  background-color: #33ff33;
+  background-color: #0ac9c9;
   color: black;
 }
 
@@ -53,14 +51,11 @@
 }
 
 .img{
-  width: 100%;
+  max-width: 100%;
 }
 
 .serv-title{
   font-size: large;
-}
-
-.services{
 }
 
 .service{
@@ -81,4 +76,8 @@
 
 .img-s{
   width: 70%;
+}
+
+.cus-footer {
+  background-color: black;
 }

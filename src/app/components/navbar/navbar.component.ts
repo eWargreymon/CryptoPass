@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
   async logout(){
     try{
       this.auth.logout();
-      this.router.navigate(['/login']);}
+      this.router.navigate(['/home']);}
     catch(error){
       console.log(error);
     }

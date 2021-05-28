@@ -7,21 +7,26 @@
 <div class="container">
   <div class="row">
     <div class="title">
-      <h2 class="info-title consolas">Sobre nosotros</h2>
+      <h2 class="info-title consolas">Sobre el proyecto</h2>
     </div>
     <div class="col-lg-6 info">
       <h4 class="info-text">
         Con <span class="consolas">CryptoPass</span> podrás hacer uso de nuestro
         estupendo conversor de códigos hash, que hace uso de los 3 tipos más
-        comunes de algoritmos hash: MD5, SHA-256 y SHA-512
+        comunes de algoritmos hash: MD5, SHA-256 y SHA-512.
       </h4>
       <h4 class="info-text">
-        ¿Quieres convertir cualquier texto a uno de estos formatos?
+        <span class="consolas">CryptoPass</span> también te ofrece un fantástico cifrador de textos,
+        haciendo uso de los 3 algoritmos más comunes de cifrado: AES, DES y Triple DES.
+      </h4>
+      <h4 class="info-text">
+        ¿Quieres convertir cualquier texto a uno de estos formatos?¿O quieres
+        cifrar algún secreto para enviárselo a alguien?
         <span class="consolas">CryptoPass</span> es para ti.
       </h4>
       <h4 class="info-text">
         ¿Quieres gestionar tus contraseñas? Atent@ a lo que
-        <span class="consolas">CryptoPass</span> puede ofrecerte
+        <span class="consolas">CryptoPass</span> está preparando para ti: ¡Un gestor de contraseñas!
       </h4>
     </div>
     <div class="col-lg-6">
@@ -43,32 +48,67 @@
     </div>
     <div class="col-lg-5 service">
       <div class="service-content">
-        <h4 class="consolas serv-title">Gestor de contraseñas</h4>
-        <img class="img mb-2" src="../../../assets/img/contraseñas.jpeg" alt="">
+        <h4 class="consolas serv-title">Cifrado AES</h4>
+        <img class="img mb-2" src="../../../assets/img/aes.jpeg" alt="">
         <p class="service-text">
-          ¿Alguna vez has soñado con no tener que recordar todas las contraseñas que usas diariamente?
-          Si es así, usar esta herramienta te vendrá genial.
+          Advanced Encryption Standard (AES), también conocido como Rijndael, 
+          es un esquema de cifrado por bloques adoptado como un estándar por el gobierno de los EEUU y es
+          uno de los algoritmos más populares usados en criptografía simétrica.
         </p>
         <p>
-          Solo tendrás que registrarte y empezar a almacenar tus contraseñas,
-          codificadas haciendo uso de algoritmos de cifrado para aportar mayor seguridad.
+          El algoritmo se basa en varias sustituciones, permutaciones y transformaciones 
+          lineales, cada una ejecutada en bloques de datos de 16 bytes.
         </p>
-        <button mat-raised-button color="primary" [routerLink]="['/login']">Accede a tu cuenta</button>
+        <button mat-raised-button color="primary" [routerLink]="['/cifrados']">Pruébame</button>
       </div>
     </div>
     <div class="col-lg-5 service">
       <div class="service-content">
-        <h4 class="consolas serv-title">Conversor MD5</h4>
-        <img class="img-s mb-2" src="../../../assets/img/md5.jpg" alt="">
-        <p>
-          El algoritmo MD5 se trata de un algoritmo de reducción
-          criptográfico de 128 bits ampliamente usado.
+        <h4 class="consolas serv-title">Cifrado DES</h4>
+        <img class="img mb-2" src="../../../assets/img/des.jpeg" alt="">
+        <p class="service-text">
+          Data Encryption Standard (DES) es un algoritmo de cifrado cuyo uso se ha propagado ampliamente por 
+          todo el mundo.
         </p>
         <p>
-          Con nuestro sencillo conversor, podrás codificar cualquier texto
-          que introduzcas haciendo uso de este algoritmo.
+          Hoy en día, DES se considera inseguro para muchas aplicaciones, debido principalmente a que el tamaño de clave es corto.
+          Su variante Triple DES se considera mucho más segura.
         </p>
-        <button mat-raised-button color="primary" [routerLink]="['/home']">Prúebame</button>
+        <button mat-raised-button color="primary" [routerLink]="['/cifrados']">Pruébame</button>
+      </div>
+    </div>
+    <div class="col-lg-5 service">
+      <div class="service-content">
+        <h4 class="consolas serv-title">Cifrado Triple DES</h4>
+        <img class="img mb-2" src="../../../assets/img/01res.png" alt="">
+        <p class="service-text">
+          Triple DES se trata del algoritmo que hace triple cifrado del DES. También es conocido como TDES o 3DES, 
+          y se podría considerar sucesor directo de DES.
+        </p>
+        <p>
+          El Triple DES está desapareciendo lentamente, siendo reemplazado por el algoritmo AES. Sin embargo, la mayoría de 
+          las tarjetas de crédito y otros medios de pago electrónicos tienen como estándar el algoritmo Triple DES.
+        </p>
+        <button mat-raised-button color="primary" [routerLink]="['/cifrados']">Pruébame</button>
+      </div>
+    </div>
+    <div class="col-lg-5 service">
+      <div class="service-content">
+        <h4 class="consolas serv-title">Gestor de contraseñas</h4>
+        <img class="img mb-2" src="../../../assets/img/contraseñas.jpeg" alt="">
+        <p class="service-text">
+          ¡FUNCIONALIDAD EN CONSTRUCCIÓN!
+        </p>
+        <p class="service-text">
+          ¿Alguna vez has soñado con no tener que recordar todas las contraseñas que usas diariamente?
+          Solo tendrás que registrarte y empezar a almacenar tus contraseñas,
+          codificadas haciendo uso de algoritmos de cifrado para aportar mayor seguridad.
+        </p>
+        <p>
+          Puedes ir registrándote en el sistema para tenerlo todo preparado para cuando se lance
+          esta funcionalidad
+        </p>
+        <button mat-raised-button color="primary" [routerLink]="['/login']">Accede a tu cuenta</button>
       </div>
     </div>
     <div class="col-lg-5 service">
@@ -101,5 +141,30 @@
         <button mat-raised-button color="primary" [routerLink]="['/home']">Prúebame</button>
       </div>
     </div>
+    <div class="col-lg-5 service">
+      <div class="service-content">
+        <h4 class="consolas serv-title">Conversor MD5</h4>
+        <img class="img-s mb-2" src="../../../assets/img/md5.jpg" alt="">
+        <p>
+          El algoritmo MD5 se trata de un algoritmo de reducción
+          criptográfico de 128 bits ampliamente usado.
+        </p>
+        <p>
+          Con nuestro sencillo conversor, podrás codificar cualquier texto
+          que introduzcas haciendo uso de este algoritmo.
+        </p>
+        <button mat-raised-button color="primary" [routerLink]="['/home']">Prúebame</button>
+      </div>
+    </div>
   </div>
 </div>
+
+<footer>
+  <div class="cus-footer py-3">
+    <div class="text-center">
+      <p class="mb-0 py-2 consolas">
+        © CryptoPass - Hashing and Ciphering your texts since 2021
+      </p>
+    </div>
+  </div>
+</footer>

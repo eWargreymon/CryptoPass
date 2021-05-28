@@ -1,52 +1,88 @@
-.main-banner{
-    padding-top: 5em;
-    padding-bottom: 5em;
-    background-image: url(src\assets\img\enc4.jpg);
-    background-size: cover;
+.main-banner {
+  padding-top: 5em;
+  padding-bottom: 3em;
+  background-image: url(src\assets\img\enc4.jpg);
+  background-size: cover;
 }
 
-.upper{
-    text-transform: uppercase;
+.upper {
+  text-transform: uppercase;
 }
 
-.consolas{
-    font-family: 'consolas', 'Courier New', Courier, monospace;
+.consolas {
+  font-family: "consolas", "Courier New", Courier, monospace;
 }
 
-.bigger{
-    font-size: large;
+.bigger {
+  font-size: large;
 }
 
-.xbigger{
-    font-size: xx-large;
+.xbigger {
+  font-size: xx-large;
+}
+.img-big{
+  width: 80%;
+}
+.img{
+  width: 100%;
 }
 
-.biglabel{
-    font-size: larger;
+.banner-types {
+  margin: .6em 0;
+  border: 1px solid;
+  padding: 0 5px;
 }
 
-.banner-hash{
-    border: 1px solid;
-    padding: 0 5px;
+.banner-types:hover{
+  background-color: #00C853;
+  color: black;
 }
 
-.banner-hash:hover{
-    background-color: chartreuse;
-    color: black;
+.button,
+.info-button{
+  background-color: #00C853;
+  color: black;
 }
 
-.matpan{
-    padding: 1rem;
+hr{
+  color: #00E676;
+  height: 2px;
 }
 
-.textmat{
-    color: #e44e80;
+.recuadro {
+  width: fit-content;
+  padding: 0.5em;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  font-size: 2em;
+  background-color: #00C853;
+  color: black;
 }
 
-.example-full-width {
-    width: 90%;
+.recuadro:hover{
+  background-color: #33ff33;
+  color: black;
 }
 
-.cus-footer{
-    background-color: black;
+.hash-information,
+.cipher-information{
+  border-radius: 10px;
+  padding: .5em;
+  background-color: #37474F;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2em;
+  padding-top: 1em;
+}
+
+.info-text {
+  font-size: 1.3em;
+}
+
+.cus-footer {
+  background-color: black;
 }

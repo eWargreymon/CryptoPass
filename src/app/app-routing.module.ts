@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
+import { AccountComponent } from './components/account/account.component';
+import { CifradosComponent } from './components/cifrados/cifrados.component';
+import { HashesComponent } from './components/hashes/hashes.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -24,8 +27,20 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
+    path: 'account',
+    component: AccountComponent
+  },
+  {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'hashes',
+    component: HashesComponent
+  },
+  {
+    path: 'cifrados',
+    component: CifradosComponent
   },
   {
     path: '**',
@@ -34,7 +49,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{scrollPositionRestoration: 'top'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

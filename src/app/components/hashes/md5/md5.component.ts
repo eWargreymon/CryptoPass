@@ -23,7 +23,7 @@ export class Md5Component implements OnInit {
   ngOnInit(): void {
     this.comunication.data.subscribe(mensaje => {
       this.mensaje = mensaje;
-      this.hashed = this.comunication.toMD5(this.mensaje);
+      // this.hashed = this.comunication.toMD5(this.mensaje);
     });
   }
 

@@ -4,237 +4,133 @@
       <div class="col-sm-12 col-10">
         <div class="main-banner-content">
           <h1 class="main-banner-content-header consolas xbigger mb-4">
-            CryptoPass - <span class="upper">Generador de códigos hash</span>
+            CryptoPass -
+            <span class="upper">Generador de textos codificados</span>
           </h1>
           <div class="main-banner-content-text">
             <h4 class="consolas bigger">
-              Usa CryptoPass para traducir con las principales funciones de
-              resumen cualquier texto
+              Con CryptoPass podrás generar diversos tipos de textos codificados
             </h4>
             <h4 class="consolas bigger">
-              Por el momento tenemos disponible las funciones:
-              <div class="d-flex justify-content-evenly mt-1">
-                <span class="banner-hash">MD5</span>
-                <span class="banner-hash">SHA256</span>
-                <span class="banner-hash">SHA512</span>
+              Incluye las funciones de resumen:
+              <div class="d-flex justify-content-evenly mt-3">
+                <span class="banner-types">MD5</span>
+                <span class="banner-types">SHA-256</span>
+                <span class="banner-types">SHA-512</span>
               </div>
             </h4>
             <h4 class="consolas bigger">
-              También tenemos disponible un gestor de contraseñas, para que
-              almacenes codificadas tus contraseñas más importantes. Obtén más
-              información en el siguiente enlace:
+              Incluye las funciones de cifrado:
+              <div class="d-flex justify-content-evenly mt-3">
+                <span class="banner-types">AES</span>
+                <span class="banner-types">DES</span>
+                <span class="banner-types">TripleDES</span>
+              </div>
             </h4>
-            <div class="d-flex justify-content-evenly">
+          </div>
+          <h4 class="consolas bigger">
+            Si quieres más información sobre el servicio:
+            <div class="d-flex justify-content-center">
               <button
                 mat-raised-button
-                color="primary"
+                class="info-button bigger consolas mt-4"
                 [routerLink]="['/about']"
               >
-                Más información
+                Accede desde aquí
               </button>
             </div>
-          </div>
+          </h4>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container mb-5">
-  <div class="row mt-4 d-flex justify-content-center">
-    <div class="col">
-      <h1 class="consolas upper">Introduce tu texto</h1>
-      <h2 class="consolas">Primero, introduce aquí el texto que quieras convertir</h2>
-      <div class="mb-2">
-        <mat-form-field class="example-full-width" color="accent">
-          <input
-            matInput
-            class="biglabel textmat"
-            placeholder="Por ejemplo: un verso de tu canción favorita, una contraseña que quieras verificar..."
-            [(ngModel)]="texto"
-          />
-          <button
-            mat-button
-            *ngIf="texto"
-            matSuffix
-            mat-icon-button
-            (click)="texto = '';enviado=false"
-          >
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-      </div>
-      <div class="buttonLogic mb-4">
-        <button
-        *ngIf="texto"
-        mat-raised-button
-        color="primary"
-        (click)="enviar()"
-        >
-        Enviar
-      </button>
-      <p *ngIf="enviado && texto">¡Texto recibido!</p>
+<div class="container">
+  <div class="row mt-4">
+    <div class="title">
+      <h1 class="consolas upper recuadro">Funciones Hash</h1>
     </div>
-      <h1 class="consolas upper">Funciones Hash</h1>
-      <h2 class="consolas">
-        A continuación, selecciona una de las siguientes funciones hash para
-        hacer la conversión
-      </h2>
+    <div class="row hash-information">
+      <div class="col-lg-6 info">
+        <h4 class="info-text">
+          Las funciones Hash o de resumen son funciones que transforman un
+          conjunto de datos en un código alfanumérico con una longitud fija.
+          Independientemente de la cantidad de datos que se introduzcan, el
+          código resultante tendrá siempre el mismo número de caracteres.
+        </h4>
+        <h4 class="info-text">
+          Entre sus utilidades, destaca la facilidad para comprobar la
+          integridad de cualquier texto o mensaje, ya que cualquier alteriación,
+          por mínima que sea, provocará un resultado radicalmente distinto.
+        </h4>
+        <div class="d-flex justify-content-center">
+          <button
+            mat-raised-button
+            class="button mb-3 mt-4"
+            [routerLink]="['/hashes']"
+          >
+            Accede al conversor
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-6 d-flex justify-content-center">
+        <img
+          class="img-big"
+          src="../../../assets/img/hash.jpg"
+          alt="Imagen de cifrado"
+        />
+      </div>
     </div>
   </div>
 
-  <mat-tab-group mat-stretch-tabs animationDuration="1500ms" class="mt-3">
-    <mat-tab label="MD5">
-      <mat-card class="mat-card">
-        <mat-card-header class="d-flex justify-content-start">
-          <mat-card-title>Conversión al formato MD5</mat-card-title>
-          <mat-card-subtitle class="consolas"
-            >Función de resumen muy usada de 128 bits</mat-card-subtitle
-          >
-        </mat-card-header>
-        <mat-card-content class="d-flex justify-content-start">
-          <app-md5></app-md5>
-        </mat-card-content>
-      </mat-card>
-    </mat-tab>
-    <mat-tab label="SHA-256">
-      <mat-card class="mat-card">
-        <mat-card-header class="d-flex justify-content-center">
-          <mat-card-title>Conversión al formato SHA-256</mat-card-title>
-          <mat-card-subtitle class="consolas"
-            >Función de resumen segura de 256 bits</mat-card-subtitle
-          >
-        </mat-card-header>
-        <mat-card-content class="d-flex justify-content-center">
-          <app-sha256></app-sha256>
-        </mat-card-content>
-      </mat-card>
-    </mat-tab>
-    <mat-tab label="SHA-512">
-      <mat-card class="mat-card">
-        <mat-card-header class="d-flex justify-content-end">
-          <mat-card-title>Conversión al formato SHA-512</mat-card-title>
-          <mat-card-subtitle class="consolas">
-            Función de resumen muy segura de 512 bits
-          </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content class="d-flex justify-content-end">
-          <app-sha512></app-sha512>
-        </mat-card-content>
-      </mat-card>
-    </mat-tab>
-  </mat-tab-group>
+  <hr class="mt-4" />
 
-  <hr>
-
-  <div class="row mt-4 d-flex justify-content-center">
-    <div class="col">
-      <h1 class="consolas upper">Algoritmos de Cifrado</h1>
-      <h2 class="consolas">Primero, introduce aquí el texto que quieras cifrar y la clave para cifrarlo</h2>
-      <div class="mb-2">
-        <mat-form-field class="example-full-width" color="accent">
-          <mat-label>Texto a cifrar</mat-label>
-          <input
-            matInput
-            class="biglabel textmat"
-            placeholder="Por ejemplo: un secreto que quieras enviar a alguien..."
-            [(ngModel)]="textToCipher"
-          >
-          <button
-            mat-button
-            *ngIf="textToCipher"
-            matSuffix
-            mat-icon-button
-            (click)="textToCipher = '';enviadoCipher=false"
-          >
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-        <mat-form-field class="example-full-width" color="accent">
-          <mat-label>Clave de cifrado</mat-label>
-          <input
-            matInput
-            type="password"
-            class="biglabel textmat"
-            placeholder="¡No la olvides! La necesitas para descifrarlo"
-            [(ngModel)]="clave"
-          >
-          <button
-            mat-button
-            *ngIf="clave"
-            matSuffix
-            mat-icon-button
-            (click)="clave = '';enviadoCipher=false"
-          >
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
+  <div class="row mt-4 mb-4">
+    <div class="title">
+      <h1 class="consolas upper recuadro">Algoritmos de cifrado</h1>
+    </div>
+    <div class="row cipher-information">
+      <div class="col-lg-6">
+        <img
+          class="img"
+          src="../../../assets/img/cifrado.png"
+          alt="Imagen de cifrado"
+        />
       </div>
-      <div class="buttonLogic mb-4">
-        <button
-          *ngIf="textToCipher && clave"
-          mat-raised-button
-          color="primary"
-          (click)="enviarCipher()"
-        >
-          Enviar
-        </button>
-        <p *ngIf="enviadoCipher && textToCipher && clave">¡Texto recibido!</p>
+      <div class="col-lg-6 info">
+        <h4 class="info-text">
+          Los algoritmos de cifrado hacen uso de una  
+          cierta clave para transformar un mensaje, de tal forma 
+          que sea incomprensible o, al menos, difícil de comprender, a toda 
+          persona que no tenga la clave secreta, o de descifrado, del algoritmo.
+        </h4>
+        <h4 class="info-text">
+          Algunos de sus usos más comunes son el 
+          almacenamiento y transmisión de información sensible como 
+          contraseñas, números de identificación legal, números de tarjetas 
+          de crédito y conversaciones privadas, entre otros.
+        </h4>
+        <div class="d-flex justify-content-center">
+          <button
+            mat-raised-button
+            class="button mt-2 mb-3"
+            [routerLink]="['/cifrados']"
+          >
+            Accede al conversor
+          </button>
+        </div>
       </div>
-      <h2 class="consolas">
-        A continuación, selecciona uno de las siguientes algoritmos para
-        hacer el cifrado
-      </h2>
     </div>
   </div>
-
-  <mat-tab-group mat-stretch-tabs animationDuration="1500ms" class="mt-3">
-    <mat-tab label="AES">
-      <mat-card class="mat-card">
-        <mat-card-header class="d-flex justify-content-start">
-          <mat-card-title>Cifrado y descifrado con AES</mat-card-title>
-          <mat-card-subtitle class="consolas"
-            >Algoritmo de cifado Advanced Encryption Standard</mat-card-subtitle
-          >
-        </mat-card-header>
-        <mat-card-content class="d-flex justify-content-center">
-          <app-aes></app-aes>
-        </mat-card-content>
-      </mat-card>
-    </mat-tab>
-    <mat-tab label="DES">
-      <mat-card class="mat-card">
-        <mat-card-header class="d-flex justify-content-center">
-          <mat-card-title>Cifrado y descifrado con DES</mat-card-title>
-          <mat-card-subtitle class="consolas"
-            >Algoritmo de cifrado Data Encryption Standard</mat-card-subtitle
-          >
-        </mat-card-header>
-        <mat-card-content class="d-flex justify-content-center">
-          <app-des></app-des>
-        </mat-card-content>
-      </mat-card>
-    </mat-tab>
-    <mat-tab label="TDES">
-      <mat-card class="mat-card">
-        <mat-card-header class="d-flex justify-content-end">
-          <mat-card-title>Cifrado y descifrado con TDES</mat-card-title>
-          <mat-card-subtitle class="consolas">
-            Algoritmo de cifrado Triple Data Encryption Standard
-          </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content class="d-flex justify-content-center">
-          <app-tdes></app-tdes>
-        </mat-card-content>
-      </mat-card>
-    </mat-tab>
-  </mat-tab-group>
 </div>
 
 <footer>
   <div class="cus-footer py-3">
     <div class="container text-center">
-      <p class="mb-0 py-2 consolas">© CryptoPass - Hashing and Ciphering your texts since 2021 </p>
+      <p class="mb-0 py-2 consolas">
+        © CryptoPass - Hashing and Ciphering your texts since 2021
+      </p>
     </div>
   </div>
 </footer>

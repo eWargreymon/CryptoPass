@@ -23,7 +23,7 @@ export class Sha256Component implements OnInit {
   ngOnInit(): void {
     this.comunication.data.subscribe(mensaje => {
       this.mensaje = mensaje;
-      this.hashed = this.comunication.toSHA256(this.mensaje);
+      // this.hashed = this.comunication.toSHA256(this.mensaje);
     });
   }
 

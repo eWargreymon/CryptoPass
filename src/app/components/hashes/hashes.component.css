@@ -1,0 +1,56 @@
+.container {
+  padding: 3em 0;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 3em 2em;
+  }
+}
+
+.banner {
+  background-color: #00ff6a;
+  color: black;
+  padding: 3em 2em;
+  font-size: large;
+}
+
+.banner h1,
+.consolas {
+  font-family: "consolas", "Courier New", Courier, monospace;
+}
+
+.cus-footer {
+  background-color: black;
+}
+
+.main-banner {
+  padding-top: 5em;
+  padding-bottom: 5em;
+  background-image: url(src\assets\img\enc4.jpg);
+  background-size: cover;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.bigger {
+  font-size: large;
+}
+
+.xbigger {
+  font-size: xx-large;
+}
+
+.biglabel {
+  font-size: larger;
+}
+
+.textmat {
+  color: #00ff6a;
+}
+
+.example-full-width {
+  width: 100%;
+}

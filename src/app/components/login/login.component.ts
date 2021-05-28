@@ -23,11 +23,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.clipboardApi.copyResponse$.subscribe(re => {
-    //   if (re.isSuccess) {
-    //       alert('copy success!');
-    //   }
-    // });
   }
 
   async onLogin(){
@@ -35,7 +30,7 @@ export class LoginComponent implements OnInit {
     try{
       const user = await this.auth.login(email, password);
       if(user){
-        this.router.navigate(['/home']);
+        this.router.navigate(['/account']);
       }
     } catch(e){
       console.log(e);

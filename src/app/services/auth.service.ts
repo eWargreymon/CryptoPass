@@ -2,21 +2,22 @@ import { Component, Injectable } from '@angular/core';
 
 import { AngularFireAuth } from '@angular/fire/auth';
 
-import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/auth";
 import "firebase/firestore";
 
-import { first } from "rxjs/operators";
+import { AngularFirestore } from '@angular/fire/firestore';
+import { userData } from '../models/userData.model';
 
 
 @Injectable()
 export class AuthService {
 
-  public user: firebase.User;
+  public uid: string;
 
   constructor(
-    public afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth,
+    private readonly afs: AngularFirestore
   ) { }
 
   async login(email: string, pass: string){
@@ -25,6 +26,10 @@ export class AuthService {
         email,
         pass
       );
+      
+      localStorage.setItem('currentUID', result.user.uid);
+      localStorage.setItem('currentEmail', result.user.email);
+      
       return result;
     } catch(error){
       console.log(error)
@@ -52,8 +57,15 @@ export class AuthService {
     }
   }
 
-  getCurrentUser(){
-    return this.afAuth.authState.pipe(first()).toPromise();
+  storeData(payload: userData){
+    return this.afs.collection('usersData').add(payload);
+  }
+
+  loadData(userId: string){
+    return this.afs.collection(
+      'usersData', 
+      ref => ref.where("uID","==",userId)
+    ).snapshotChanges();
   }
 
 }
