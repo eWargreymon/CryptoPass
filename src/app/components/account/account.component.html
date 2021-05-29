@@ -1,5 +1,10 @@
-<h1>Espacio personal</h1>
+<div class="container">
 
-<h3>En construcción</h3>
+    <h1 class="construct">En construcción</h1>
+    
+    <div class="personal">
+        <h1>Espacio personal</h1>
+        <p *ngIf="user$ | async as user">Te has logeado como {{user.email}}</p>
+    </div>
 
-<p *ngIf="user$ | async as user">Te has logeado como {{user.email}}</p>
+</div>

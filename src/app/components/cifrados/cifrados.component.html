@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="row d-flex justify-content-center">
-    <div [ngClass]="{ 'first': modocifrado == 2 }">
+    <div [ngClass]="{ first: modocifrado == 2 }">
       <h2 class="consolas">
         Primero, selecciona la acción que quieras realizar
       </h2>
@@ -90,53 +90,58 @@
     </div>
   </div>
 
-  <mat-tab-group
-    *ngIf="modocifrado != 2"
-    mat-stretch-tabs
-    animationDuration="1500ms"
-    class="tabgroup mt-3"
-  >
-    <mat-tab label="AES">
-      <mat-card class="mat-card">
-        <mat-card-header class="d-flex justify-content-start">
-          <mat-card-title>Algoritmo AES</mat-card-title>
-          <mat-card-subtitle class="consolas"
-            >Algoritmo de cifrado Advanced Encryption
-            Standard</mat-card-subtitle
-          >
-        </mat-card-header>
-        <mat-card-content class="d-flex justify-content-center">
-          <app-aes [operation]="modocifrado"></app-aes>
-        </mat-card-content>
-      </mat-card>
-    </mat-tab>
-    <mat-tab label="DES">
-      <mat-card class="mat-card">
-        <mat-card-header class="d-flex justify-content-center">
-          <mat-card-title class="text-center">Algoritmo DES</mat-card-title>
-          <mat-card-subtitle class="consolas text-center"
-            >Algoritmo de cifrado Data Encryption Standard</mat-card-subtitle
-          >
-        </mat-card-header>
-        <mat-card-content class="d-flex justify-content-center">
-          <app-des [operation]="modocifrado"></app-des>
-        </mat-card-content>
-      </mat-card>
-    </mat-tab>
-    <mat-tab label="TDES">
-      <mat-card class="mat-card">
-        <mat-card-header class="d-flex justify-content-end">
-          <mat-card-title class="text-right">Algoritmo TDES</mat-card-title>
-          <mat-card-subtitle class="consolas text-right">
-            Algoritmo de cifrado Triple Data Encryption Standard
-          </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content class="d-flex justify-content-center">
-          <app-tdes [operation]="modocifrado"></app-tdes>
-        </mat-card-content>
-      </mat-card>
-    </mat-tab>
-  </mat-tab-group>
+  <div *ngIf="modocifrado != 2">
+    <h2 class="consolas" *ngIf="modocifrado == 0">
+      A continuación, selecciona el método con el que se cifró el texto e 
+      introdúcelo junto a la clave secreta para descifrarlo
+    </h2>
+    <mat-tab-group
+      mat-stretch-tabs
+      animationDuration="1500ms"
+      class="tabgroup mt-3"
+    >
+      <mat-tab label="AES">
+        <mat-card class="mat-card">
+          <mat-card-header class="d-flex justify-content-start">
+            <mat-card-title>Algoritmo AES</mat-card-title>
+            <mat-card-subtitle class="consolas"
+              >Algoritmo de cifrado Advanced Encryption
+              Standard</mat-card-subtitle
+            >
+          </mat-card-header>
+          <mat-card-content class="d-flex justify-content-center">
+            <app-aes [operation]="modocifrado"></app-aes>
+          </mat-card-content>
+        </mat-card>
+      </mat-tab>
+      <mat-tab label="DES">
+        <mat-card class="mat-card">
+          <mat-card-header class="d-flex justify-content-center">
+            <mat-card-title class="text-center">Algoritmo DES</mat-card-title>
+            <mat-card-subtitle class="consolas text-center"
+              >Algoritmo de cifrado Data Encryption Standard</mat-card-subtitle
+            >
+          </mat-card-header>
+          <mat-card-content class="d-flex justify-content-center">
+            <app-des [operation]="modocifrado"></app-des>
+          </mat-card-content>
+        </mat-card>
+      </mat-tab>
+      <mat-tab label="TDES">
+        <mat-card class="mat-card">
+          <mat-card-header class="d-flex justify-content-end">
+            <mat-card-title class="text-right">Algoritmo TDES</mat-card-title>
+            <mat-card-subtitle class="consolas text-right">
+              Algoritmo de cifrado Triple Data Encryption Standard
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="d-flex justify-content-center">
+            <app-tdes [operation]="modocifrado"></app-tdes>
+          </mat-card-content>
+        </mat-card>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
 </div>
 
 <footer>

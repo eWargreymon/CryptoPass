@@ -26,10 +26,6 @@ export class AuthService {
         email,
         pass
       );
-      
-      localStorage.setItem('currentUID', result.user.uid);
-      localStorage.setItem('currentEmail', result.user.email);
-      
       return result;
     } catch(error){
       console.log(error)

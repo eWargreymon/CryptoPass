@@ -10,7 +10,7 @@
       <div class="texto">
         <p>
           <span *ngIf="!mostrar">¡Cifrado generado!</span>
-          <span *ngIf="mostrar">{{ cifrado }}</span>
+          <textarea cols="40" rows="3" *ngIf="mostrar">{{ cifrado }}</textarea>
           <button
             mat-icon-button
             (click)="copyText()"
@@ -88,7 +88,7 @@
       </button>
     </mat-form-field>
     <div class="desc-button">
-      <button mat-raised-button color="primary" class="desc-button" (click)="decrypt()">
+      <button mat-raised-button color="primary"(click)="decrypt()">
         Descifrar texto
       </button>
     </div>

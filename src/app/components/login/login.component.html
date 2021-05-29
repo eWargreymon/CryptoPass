@@ -1,19 +1,21 @@
-<div class="row">
-    <div class="col-md-6 mx-auto mt-5">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="text-center">Login</h2>
-                <form [formGroup]="formularioLog" (ngSubmit)="onLogin()">
-                    <div class="form-group">
-                        <input type="email" class="form-control mt-2" placeholder="Email" formControlName="email">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto mt-5">
+            <div class="card black">
+                <div class="card-body">
+                    <h2 class="text-center">Accede a tu cuenta</h2>
+                    <form [formGroup]="formularioLog" (ngSubmit)="onLogin()">
+                        <div class="form-group mt-3">
+                            <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+                        </div>
+                        <button class="btn btn-dark mt-3">Iniciar sesión</button>
+                    </form>
+                    <div class="mt-2 reglink">
+                        ¿No estás registrado? <a class="black" [routerLink]="['/register']">Regístrate aquí</a>
                     </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control mt-2" placeholder="Password" formControlName="password">
-                    </div>
-                    <button class="btn btn-primary mt-2">Login</button>
-                </form>
-                <div class="mt-1 reglink">
-                    ¿No estás registrado? <a [routerLink]="['/register']">Regístrate aquí</a>
                 </div>
             </div>
         </div>

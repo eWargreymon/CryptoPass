@@ -1,7 +1,11 @@
-.card{
+.black{
     color: black;
 }
 
 .reglink{
     font-size: small;
+}
+
+a{
+    font-weight: 500;
 }

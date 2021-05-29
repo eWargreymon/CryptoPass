@@ -31,6 +31,7 @@ export class RegisterComponent implements OnInit {
       const user = await this.authservice.register(email, password);
       if(user){
         this.router.navigate(['/login']);
+        alert("¡Registro completado con éxito!");
       }
     } catch(e){
       console.log(e);

@@ -5,11 +5,6 @@
   padding: 1em;
 }
 
-.radio,
-.operations {
-  padding: 0 1em;
-}
-
 .content {
   margin-left: 1em;
 }
@@ -38,8 +33,16 @@
 }
 
 .decrypt {
+  width: 50vw;
   display: flex;
   flex-direction: column;
-  width: 120%;
-  padding-right: 1em;
+}
+
+.desc-button{
+  display: flex;
+  justify-content: center;
+}
+
+textarea{
+  border-radius: 5px;
 }

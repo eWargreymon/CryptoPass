@@ -13,8 +13,6 @@ import { AuthService } from 'src/app/services/auth.service';
 export class AccountComponent implements OnInit {
 
   public user$: Observable<any> = this.auth.afAuth.user;
-  public uid: string = localStorage.getItem('currentUID');
-  public email: string = localStorage.getItem('currentEmail');
 
   constructor(
     private auth: AuthService,
