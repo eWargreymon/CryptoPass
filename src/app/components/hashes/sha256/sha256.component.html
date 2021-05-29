@@ -1,30 +1,52 @@
 <div *ngIf="!generado" class="d-flex justify-content-center">
-    <button mat-raised-button color="primary" (click)="generate()">
-        Generar hash
-    </button>
+  <button mat-raised-button color="primary" (click)="generate()">
+    Generar hash
+  </button>
 </div>
 
 <div *ngIf="generado" class="generado">
-    <div class="texto">
-        <p>    
-            <span *ngIf="!mostrar">¡Hash generado!</span>
-            <textarea cols="40" rows="3" *ngIf="mostrar">{{ hashed }}</textarea>
-            <button mat-icon-button (click)="copyText()" matTooltip="Copiar código generado" matTooltipPosition="after">
-                <mat-icon>content_copy</mat-icon>
-            </button>  
-        </p>
-    </div>
-    <div class="botones">
-        <button mat-raised-button *ngIf="!mostrar" color="primary" (click)="mostrar=true">Mostrar código</button>
-        <button mat-raised-button *ngIf="mostrar" color="primary" (click)="mostrar=false">Ocultar código</button>
-        <button mat-raised-button class="resbut" color="primary" (click)="reset()">Reset</button>
-        <button
-          mat-raised-button
-          class="resbut"
-          color="primary"
-          (click)="generate()"
-        >
-          Actualizar
-        </button>
-    </div>
+  <div class="texto">
+    <p>
+      <span *ngIf="!mostrar">¡Hash generado!</span>
+      <textarea cols="40" rows="3" *ngIf="mostrar">{{ hashed }}</textarea>
+      <button
+        mat-icon-button
+        (click)="copyText()"
+        matTooltip="Copiar código generado"
+        matTooltipPosition="after"
+        class="green"
+      >
+        <mat-icon>content_copy</mat-icon>
+      </button>
+    </p>
+  </div>
+  <div class="botones">
+    <button
+      mat-raised-button
+      *ngIf="!mostrar"
+      color="primary"
+      (click)="mostrar = true"
+    >
+      Mostrar código
+    </button>
+    <button
+      mat-raised-button
+      *ngIf="mostrar"
+      color="primary"
+      (click)="mostrar = false"
+    >
+      Ocultar código
+    </button>
+    <button mat-raised-button class="resbut" color="primary" (click)="reset()">
+      Reset
+    </button>
+    <button
+      mat-raised-button
+      class="resbut"
+      color="primary"
+      (click)="generate()"
+    >
+      Actualizar
+    </button>
+  </div>
 </div>

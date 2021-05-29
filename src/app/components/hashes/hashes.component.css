@@ -47,7 +47,8 @@
   font-size: larger;
 }
 
-.textmat {
+.textmat,
+.aviso {
   color: #00ff6a;
 }
 

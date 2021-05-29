@@ -1,22 +1,8 @@
-.aes{
-    display: flex;
-    align-items: center;
-    padding: 1em;
-}
-
-.radio,
-.operations{
-  padding: 0 1em;
-}
-
-.example-radio-group {
-  margin: 15px 0;
+.aes {
   display: flex;
-  flex-direction: column;
-}
-
-.example-radio-button {
-  margin: 5px;
+  align-items: center;
+  padding: 1em;
+  width: 100%;
 }
 
 .content {
@@ -26,6 +12,10 @@
 .generado {
   display: flex;
   flex-direction: column;
+}
+
+.yellow {
+  color: #ffff00;
 }
 
 .texto,
@@ -42,8 +32,17 @@
   justify-content: flex-start;
 }
 
-.decrypt{
-    display: flex;
-    flex-direction: column;
-    width: 120%;
+.decrypt {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.desc-button{
+  display: flex;
+  justify-content: center;
+}
+
+textarea{
+  border-radius: 5px;
 }

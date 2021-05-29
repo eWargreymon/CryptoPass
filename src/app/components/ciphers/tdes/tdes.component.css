@@ -10,16 +10,6 @@
   padding: 0 1em;
 }
 
-.example-radio-group {
-  margin: 15px 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.example-radio-button {
-  margin: 5px;
-}
-
 .content {
   margin-left: 1em;
 }
@@ -27,6 +17,10 @@
 .generado {
   display: flex;
   flex-direction: column;
+}
+
+.yellow{
+  color: #ffff00;
 }
 
 .texto,

@@ -46,6 +46,11 @@
   color: black;
 }
 
+.about-button{
+  background-color: #00ffff;
+  color: black;
+}
+
 .info-text {
   font-size: 1.3em;
 }

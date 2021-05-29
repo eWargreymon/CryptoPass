@@ -6,13 +6,34 @@
 
 <div class="container">
   <div class="row d-flex justify-content-center">
-    <div class="col">
+    <div [ngClass]="{ 'first': modocifrado == 2 }">
       <h2 class="consolas">
-        Si deseas cifrar, primero introduce aquí el texto que quieras cifrar y
-        la clave para cifrarlo
+        Primero, selecciona la acción que quieras realizar
+      </h2>
+      <div class="radio">
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          color="primary"
+          [(ngModel)]="modocifrado"
+        >
+          <mat-radio-button class="example-radio-button" [value]="1">
+            Cifrado
+          </mat-radio-button>
+          <mat-radio-button class="example-radio-button" [value]="0">
+            Descifrado
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+
+    <div *ngIf="modocifrado == 1" class="col">
+      <h2 class="consolas">
+        A continuación, introduce aquí el texto que quieras cifrar y la clave
+        para cifrarlo
       </h2>
       <div class="mb-2">
-        <mat-form-field class="example-full-width" color="accent">
+        <mat-form-field class="example-full-width" color="primary">
           <mat-label>Texto a cifrar</mat-label>
           <input
             matInput
@@ -30,7 +51,7 @@
             <mat-icon>close</mat-icon>
           </button>
         </mat-form-field>
-        <mat-form-field class="example-full-width" color="accent">
+        <mat-form-field class="example-full-width" color="primary">
           <mat-label>Clave de cifrado</mat-label>
           <input
             matInput
@@ -54,58 +75,64 @@
         <button
           *ngIf="textToCipher && clave"
           mat-raised-button
-          class="boton-enviar"
+          color="primary"
           (click)="enviarCipher()"
         >
           Enviar
         </button>
-        <p *ngIf="enviadoCipher && textToCipher && clave">¡Texto recibido!</p>
+        <p *ngIf="enviadoCipher && textToCipher && clave" class="aviso mt-2">
+          ¡Texto recibido!
+        </p>
       </div>
       <h2 class="consolas">
-        Selecciona uno de las siguientes algoritmos para hacer el cifrado o el
-        descifrado
+        Selecciona uno de las siguientes algoritmos para hacer el cifrado
       </h2>
     </div>
   </div>
 
-  <mat-tab-group mat-stretch-tabs animationDuration="1500ms" class="tabgroup mt-3">
+  <mat-tab-group
+    *ngIf="modocifrado != 2"
+    mat-stretch-tabs
+    animationDuration="1500ms"
+    class="tabgroup mt-3"
+  >
     <mat-tab label="AES">
       <mat-card class="mat-card">
         <mat-card-header class="d-flex justify-content-start">
-          <mat-card-title>Cifrado y descifrado con AES</mat-card-title>
+          <mat-card-title>Algoritmo AES</mat-card-title>
           <mat-card-subtitle class="consolas"
             >Algoritmo de cifrado Advanced Encryption
             Standard</mat-card-subtitle
           >
         </mat-card-header>
         <mat-card-content class="d-flex justify-content-center">
-          <app-aes></app-aes>
+          <app-aes [operation]="modocifrado"></app-aes>
         </mat-card-content>
       </mat-card>
     </mat-tab>
     <mat-tab label="DES">
       <mat-card class="mat-card">
         <mat-card-header class="d-flex justify-content-center">
-          <mat-card-title>Cifrado y descifrado con DES</mat-card-title>
-          <mat-card-subtitle class="consolas"
+          <mat-card-title class="text-center">Algoritmo DES</mat-card-title>
+          <mat-card-subtitle class="consolas text-center"
             >Algoritmo de cifrado Data Encryption Standard</mat-card-subtitle
           >
         </mat-card-header>
         <mat-card-content class="d-flex justify-content-center">
-          <app-des></app-des>
+          <app-des [operation]="modocifrado"></app-des>
         </mat-card-content>
       </mat-card>
     </mat-tab>
     <mat-tab label="TDES">
       <mat-card class="mat-card">
         <mat-card-header class="d-flex justify-content-end">
-          <mat-card-title>Cifrado y descifrado con TDES</mat-card-title>
-          <mat-card-subtitle class="consolas">
+          <mat-card-title class="text-right">Algoritmo TDES</mat-card-title>
+          <mat-card-subtitle class="consolas text-right">
             Algoritmo de cifrado Triple Data Encryption Standard
           </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="d-flex justify-content-center">
-          <app-tdes></app-tdes>
+          <app-tdes [operation]="modocifrado"></app-tdes>
         </mat-card-content>
       </mat-card>
     </mat-tab>
@@ -113,7 +140,10 @@
 </div>
 
 <footer>
-  <div class="cus-footer py-3">
+  <div
+    class="cus-footer py-3"
+    [ngClass]="{ 'bottom-footer': modocifrado == 2 }"
+  >
     <div class="text-center">
       <p class="mb-0 py-2 consolas">
         © CryptoPass - Hashing and Ciphering your texts since 2021

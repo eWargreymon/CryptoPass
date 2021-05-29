@@ -1,22 +1,12 @@
-.des{
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
+.des {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
 }
 
 .radio,
-.operations{
-  padding: 0.5em 1em;
-}
-
-.example-radio-group {
-  margin: 15px 0;
-  /* display: flex;
-  flex-direction: column; */
-}
-
-.example-radio-button {
-  margin: 5px;
+.operations {
+  padding: 0 1em;
 }
 
 .content {
@@ -26,6 +16,10 @@
 .generado {
   display: flex;
   flex-direction: column;
+}
+
+.yellow{
+  color: #ffff00;
 }
 
 .texto,
@@ -42,8 +36,8 @@
   justify-content: flex-start;
 }
 
-.decrypt{
-    display: flex;
-    flex-direction: column;
-    width: 120%;
+.decrypt {
+  display: flex;
+  flex-direction: column;
+  width: 120%;
 }

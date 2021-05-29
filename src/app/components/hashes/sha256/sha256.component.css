@@ -3,6 +3,10 @@
     flex-direction: column;
 }
 
+.green{
+    color: #00ff6a;
+}
+
 .texto, .botones{
     display: flex;
     justify-content: center;

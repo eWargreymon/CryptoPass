@@ -1,22 +1,8 @@
 <div class="tdes">
   <div class="radio">
-    <mat-radio-group
-      aria-labelledby="example-radio-group-label"
-      class="example-radio-group"
-      color="primary"
-      [(ngModel)]="mode"
-    >
-      <mat-radio-button class="example-radio-button" [value]="true">
-        Cifrado
-      </mat-radio-button>
-      <mat-radio-button class="example-radio-button" [value]="false">
-        Descifrado
-      </mat-radio-button>
-    </mat-radio-group>
-  </div>
 
   <div class="operations">
-    <div class="encrypt" *ngIf="mode">
+    <div class="encrypt" *ngIf="operation==1">
       <div *ngIf="!generado" class="d-flex justify-content-center">
         <button mat-raised-button color="primary" (click)="cipher()">
           Generar texto cifrado
@@ -33,6 +19,7 @@
               (click)="copyText()"
               matTooltip="Copiar código generado"
               matTooltipPosition="after"
+              class="yellow"
             >
               <mat-icon>content_copy</mat-icon>
             </button>
@@ -67,7 +54,7 @@
       </div>
     </div>
 
-    <div class="decrypt" *ngIf="!mode">
+    <div class="decrypt" *ngIf="operation==0">
       <mat-form-field color="accent">
         <mat-label>Texto a descifrar</mat-label>
         <input

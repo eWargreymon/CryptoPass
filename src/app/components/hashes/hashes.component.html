@@ -11,7 +11,7 @@
         Primero, introduce aquí el texto que quieras convertir
       </h2>
       <div class="mb-2">
-        <mat-form-field class="example-full-width" color="accent">
+        <mat-form-field class="example-full-width" color="primary">
           <input
             matInput
             class="biglabel textmat"
@@ -38,7 +38,7 @@
         >
           Enviar
         </button>
-        <p *ngIf="enviado && texto">¡Texto recibido!</p>
+        <p *ngIf="enviado && texto" class="aviso mt-2">¡Texto recibido!</p>
       </div>
       <h2 class="consolas">
         A continuación, selecciona una de las siguientes funciones hash para

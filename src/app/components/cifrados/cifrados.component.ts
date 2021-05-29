@@ -12,11 +12,19 @@ export class CifradosComponent implements OnInit {
   clave: string;
   enviadoCipher: boolean;
 
+  modocifrado: number = 2;
+  mostrar: boolean;
+
   constructor(
     private servicio: ComunicationService
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+  }
+
+  cambiarModo(){
+
+  }
 
   enviarCipher(){
     this.servicio.dataCifrado.next(this.textToCipher);

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ClipboardService } from 'ngx-clipboard';
 import { ComunicationService } from 'src/app/services/comunication.service';
 
@@ -20,10 +20,10 @@ export class AesComponent implements OnInit {
   generado: boolean;
   mostrar: boolean;
 
-  mode: boolean;
+  @Input() operation: number;
 
   constructor(private comunication: ComunicationService, private clipboardApi: ClipboardService) { 
-    this.mode = true; 
+ 
   }
 
   ngOnInit(): void {

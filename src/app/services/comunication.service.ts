@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { MD5,SHA256,SHA512,AES,DES,TripleDES,enc } from "crypto-js";
 import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ComunicationService {
+export class ComunicationService{
 
   data: Subject<string> = new Subject();
 
