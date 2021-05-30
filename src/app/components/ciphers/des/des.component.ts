@@ -16,6 +16,7 @@ export class DesComponent implements OnInit {
   cipherText: string;
   cipherPass: string;
   descifrado: string;
+  error: boolean = false;
 
   generado: boolean;
   mostrar: boolean;
@@ -47,6 +48,12 @@ export class DesComponent implements OnInit {
 
   decrypt(){
     this.descifrado = this.comunication.fromDES(this.cipherText, this.cipherPass);
+    if(this.descifrado==""){
+      this.descifrado = "Error en el descifrado";
+      this.error = true;
+    } else {
+      this.error = false;
+    }
   }
   
   copyText() {

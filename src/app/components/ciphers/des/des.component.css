@@ -45,3 +45,7 @@
 textarea{
   border-radius: 5px;
 }
+
+.error{
+  color: tomato;
+}
