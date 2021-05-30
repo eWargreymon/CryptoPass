@@ -66,6 +66,8 @@
 .service{
   margin: 1em;
   border: 1px solid gray;
+  border-radius: 10px;
+  background-color: rgb(71, 71, 71);
 }
 
 .service:hover{

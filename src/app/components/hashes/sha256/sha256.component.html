@@ -8,7 +8,7 @@
   <div class="texto">
     <p>
       <span *ngIf="!mostrar">¡Hash generado!</span>
-      <textarea cols="40" rows="3" *ngIf="mostrar">{{ hashed }}</textarea>
+      <textarea cols="35" rows="3" *ngIf="mostrar">{{ hashed }}</textarea>
       <button
         mat-icon-button
         (click)="copyText()"

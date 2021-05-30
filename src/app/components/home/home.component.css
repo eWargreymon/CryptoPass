@@ -5,6 +5,15 @@
   background-size: cover;
 }
 
+@media (max-width:600px){
+  .col{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 .upper {
   text-transform: uppercase;
 }

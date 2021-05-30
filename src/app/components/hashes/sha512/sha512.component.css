@@ -16,6 +16,17 @@
     justify-content: center;
 }
 
+@media (max-width:400px){
+    .botones{
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .botones button{
+        margin: 1em 1em 1em 0;
+    }
+}
+
 .resbut{
     margin-left: 1em;
 }
