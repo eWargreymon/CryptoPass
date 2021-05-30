@@ -10,7 +10,7 @@
       <div class="texto">
         <p>
           <span *ngIf="!mostrar">¡Cifrado generado!</span>
-          <textarea cols="40" rows="3" *ngIf="mostrar">{{ cifrado }}</textarea>
+          <textarea cols="35" rows="3" *ngIf="mostrar">{{ cifrado }}</textarea>
           <button
             mat-icon-button
             (click)="copyText()"

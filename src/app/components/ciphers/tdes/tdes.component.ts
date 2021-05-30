@@ -49,7 +49,7 @@ export class TdesComponent implements OnInit {
   decrypt(){
     this.descifrado = this.comunication.fromTDES(this.cipherText, this.cipherPass);
     if(this.descifrado==""){
-      this.descifrado = "Error en el descifrado";
+      this.descifrado = "Error en el descifrado: código o clave incorrectas";
       this.error = true;
     } else {
       this.error = false;

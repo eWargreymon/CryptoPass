@@ -11,7 +11,8 @@
     color: #00ff6a;
 }
 
-.texto, .botones{
+.texto,
+.botones{
     display: flex;
     justify-content: center;
 }
