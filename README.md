@@ -35,7 +35,7 @@ Dos servicios:
 
 ### Base de Datos :floppy_disk:
 
-Para implementar la funcionalidad del registro y de inicio de sesión se ha hecho uso de la utilidad ofrecida por Google Firebase. PAra ello, se ha utilizado la opción de autenticación con email y contraseña.
+Para implementar la funcionalidad del registro y de inicio de sesión se ha hecho uso de la utilidad ofrecida por Google Firebase. Para ello, se ha utilizado la opción de autenticación con email y contraseña.
 
 Para trabajar con esta base de datos en el proyecto Angular, se ha instalado la librería @angular/fire, en su versión 6.1.4.
 En dicha base de datos se ha activado su sección de autenticación, permitiendo el registro de diversos usuarios.
