@@ -1,27 +1,59 @@
-# CryptoPass
+# CryptoPass - Desarrollo de Aplicaciones Web 2
+Aplicación para el cifrado y descifrado de textos y la generación de códigos hash implementada con Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
+## Aspectos técnicos de la aplicación
 
-## Development server
+### Proyecto Angular 🔧
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+Angular version: 11.2.11
+Node version: 14.15.5
+Typescript version: 4.1.5
+```
 
-## Code scaffolding
+Internamente, el proyecto cuenta con:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Catorce componentes: 
+* Barra de navegación
+* Página de inicio
+* Página de información del servicio
+* Sección de funciones de resumen
+* Función de resumen MD5, SHA-256 y SHA-512
+* Sección de cifrado y descifrado
+* Algoritmos de cifrado AES, DES y Triple DES
+* Página de Inicio de sesión
+* Página de registro
+* Espacio personal de la cuenta
 
-## Build
+Dos servicios:
+* Uno de ellos comunica a los componentes que intervienen en las funcionalidades principales del servicio.
+  * Se introduce el texto en un componente
+  * Se procesa en el servicio
+  * Se muestra en otro componente
+  * Se emplea para la generación de hashes y para el cifrado de textos
+* El otro se emplea para comunicarse con la base de datos y poder registrarse e iniciar sesión.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Base de Datos :floppy_disk:
 
-## Running unit tests
+Para implementar la funcionalidad del registro y de inicio de sesión se ha hecho uso de la utilidad ofrecida por Google Firebase. PAra ello, se ha utilizado la opción de autenticación con email y contraseña.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para trabajar con esta base de datos en el proyecto Angular, se ha instalado la librería @angular/fire, en su versión 6.1.4.
+En dicha base de datos se ha activado su sección de autenticación, permitiendo el registro de diversos usuarios.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Angular Material :pencil2:
 
-## Further help
+Para cumplir con los requerimientos del ejercicio, se ha hecho uso de la librería Angular Material. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Los elementos utilizados son:
+```
+1. Material Toolbar
+2. Material Icon
+3. Material Button
+4. Material Input
+5. Material Tabs
+6. Material Card
+7. Material Tooltip
+8. Material Radio Buttons
+9. Material Menu
+```
